@@ -1,6 +1,6 @@
 # 🛒 Olist E-Commerce SQL Analysis (Relational Data Analysis Project)
 
-An end-to-end SQL project analyzing transactional data from **Olist**, a Brazilian e-commerce marketplace.
+An end-to-end SQL project analyzing transactional data from **Olist**, a Brazilian e-commerce marketplace.  
 The project focuses on building a clean analytical base, validating data quality, and answering business questions around revenue, delivery performance, customer geography, and product categories.
 
 All analysis was performed in **SQLite** using structured queries, CTEs, window functions, and time-based feature engineering.
@@ -10,12 +10,13 @@ All analysis was performed in **SQLite** using structured queries, CTEs, window 
 ## 🚀 What This Project Shows
 
 - Real-world relational data analysis using SQL
-- Designing and working with an explicit analytical grain
+- Designing and enforcing a clear analytical grain
 - Building reusable base datasets with joins
-- Data quality validation before analysis
+- Performing data quality checks before analysis
 - Time-based feature engineering
 - Aggregations, window functions, and ranking logic
-- Translating raw SQL output into business insights
+- Exporting SQL outputs for reporting and visualization
+- Translating raw query results into business insights
 
 This project emphasizes **analysis correctness, structure, and reasoning**, rather than visualization.
 
@@ -43,7 +44,7 @@ Key analytical themes include:
 
 ## 🧱 Analytical Design
 
-**Core grain:**
+### Core Grain
 
 > **One row per order item**
 
@@ -60,13 +61,15 @@ A reusable order-item–level dataset is constructed and referenced throughout t
 ## 🛠 Tools & Skills Used
 
 - SQL (SQLite dialect)
-- Joins (INNER, LEFT)
+- INNER and LEFT joins
 - Common Table Expressions (CTEs)
-- Window functions (`RANK`)
-- Time functions (`STRFTIME`, `JULIANDAY`)
-- Aggregations & grouping
-- Data quality checks
+- Window functions (RANK)
+- Time functions (STRFTIME, JULIANDAY)
+- Aggregations and grouping
+- CASE statements
+- Data quality validation
 - Analytical query organization
+- Exporting query results to CSV
 
 ---
 
@@ -99,6 +102,9 @@ sql/
 ├── 09_top_category_per_state.sql     <-- ranked categories per state
 ├── 10_delivery_vs_revenue.sql        <-- revenue vs delivery reliability
 └── 11_executive_summary.sql          <-- high-level summary metrics
+
+exports/                              <-- SQL export scripts
+outputs/                              <-- CSV outputs from analysis
 
 REPORT.md                             <-- detailed written analysis & findings
 README.md                             <-- project overview
