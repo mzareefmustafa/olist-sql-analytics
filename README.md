@@ -131,6 +131,12 @@ README.md                             <-- project overview
 
 ---
 
+## 👤 Author
+
+**Mohammed Zareef-Mustafa**
+
+---
+
 ## 📜 License
 
 This project is licensed under the **MIT License**. See the [LICENSE.txt](LICENSE.txt) file for details.
