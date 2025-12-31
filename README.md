@@ -1,66 +1,62 @@
-# 🛒 Olist E-Commerce Analytics (SQL)
+# Olist E-Commerce Analytics (SQL)
 
-An end-to-end SQL project analyzing transactional data from **Olist**, a Brazilian e-commerce marketplace.  
-The project focuses on building a clean analytical base, validating data quality, and answering business questions around revenue, delivery performance, customer geography, and product categories.
+An end-to-end SQL analysis of transactional data from **Olist**, a Brazilian e-commerce marketplace.  
+This project focuses on building a clean analytical foundation, validating data quality, and answering business questions related to revenue, delivery performance, customer geography, and product categories.
 
-All analysis was performed in **SQLite** using structured queries, CTEs, window functions, and time-based feature engineering.
+All analysis was performed in **SQLite**, emphasizing analytical correctness, structure, and reasoning over visualization.
 
----
+## Purpose
 
-## 🚀 What This Project Shows
+This project was built to:
+- Design a reusable analytical dataset with a clear and explicit grain
+- Validate data quality before analysis
+- Analyze revenue concentration, delivery reliability, and geographic patterns
+- Answer business questions using structured, production-style SQL queries
 
-- Real-world relational data analysis using SQL
-- Designing and enforcing a clear analytical grain
-- Building reusable base datasets with joins
-- Performing data quality checks before analysis
-- Time-based feature engineering
-- Aggregations, window functions, and ranking logic
-- Exporting SQL outputs for reporting and visualization
-- Translating raw query results into business insights
-
-This project emphasizes **analysis correctness, structure, and reasoning**, rather than visualization.
-
----
-
-## 📊 Analysis Highlights
-
-This project answers questions such as:
+## Key Questions Answered
 
 - How reliable is delivery performance overall?
-- Does high revenue or volume impact delivery reliability?
-- Which product categories drive the most revenue?
+- Does higher revenue or order volume affect delivery reliability?
+- Which product categories generate the most revenue?
 - How does revenue vary by time and geography?
 - Do category preferences differ by state?
 
-Key analytical themes include:
-
-- Delivery performance vs. estimated delivery dates
-- Revenue concentration by category
-- Customer and revenue distribution by state
-- Category rankings within each state
-- Relationship between revenue scale and delivery reliability
-
----
-
-## 🧱 Analytical Design
+## Analytical Design
 
 ### Core Grain
 
-> **One row per order item**
+**One row per order item**
 
-This grain allows:
-
+This grain enables:
 - Accurate revenue attribution
 - Flexible aggregation across time, geography, and product categories
 - Consistent reuse across all downstream analyses
 
 A reusable order-item–level dataset is constructed and referenced throughout the project.
 
----
+## Analysis Highlights
 
-## 🛠 Tools & Skills Used
+- Delivery performance compared against estimated delivery dates
+- Revenue concentration across product categories
+- Customer and revenue distribution by state
+- Category rankings within each state using window functions
+- Relationship between revenue scale and delivery reliability
 
-- SQL (SQLite dialect)
+## Key Insights
+
+- Overall on-time delivery rate is approximately **92.9%**.
+- High-revenue categories maintain delivery performance close to the overall average.
+- Revenue is highly concentrated within a small subset of product categories.
+- São Paulo (SP) dominates in total orders, items sold, and revenue.
+- Several lower-volume states show higher average item prices.
+- Product category preferences vary meaningfully by state.
+- Higher revenue does not appear to come at the cost of delivery reliability.
+
+(Full analysis and supporting queries are available in `REPORT.md` and the SQL files.)
+
+## Tools & Skills Used
+
+- SQL (SQLite)
 - INNER and LEFT joins
 - Common Table Expressions (CTEs)
 - Window functions (RANK)
@@ -71,9 +67,7 @@ A reusable order-item–level dataset is constructed and referenced throughout t
 - Analytical query organization
 - Exporting query results to CSV
 
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
 data/
@@ -110,33 +104,14 @@ REPORT.md                             <-- detailed written analysis & findings
 README.md                             <-- project overview
 ```
 
----
-
-## 🧠 Key Insights (Quick Summary)
-
-- Overall on-time delivery rate: ~92.9%
-- High-revenue categories maintain delivery performance close to the overall average
-- Revenue is highly concentrated in a small number of product categories
-- São Paulo (SP) dominates in orders, items sold, and total revenue
-- Some lower-volume states show higher average item prices
-- Category preferences vary meaningfully by state
-- High revenue does not appear to come at the cost of delivery reliability
-  (Full analysis and context available in REPORT.md and the SQL files.)
-
----
-
-## 📦 Data Source
+## Data Source
 
 - [Kaggle – Olist Brazilian E-Commerce Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?select=olist_order_items_dataset.csv)
 
----
-
-## 👤 Author
+## Author
 
 **Mohammed Zareef-Mustafa**
 
----
-
-## 📜 License
+## License
 
 This project is licensed under the **MIT License**. See the [LICENSE.txt](LICENSE.txt) file for details.
