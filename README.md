@@ -1,4 +1,4 @@
-# 🛒 Olist E-Commerce SQL Analysis (Relational Data Analysis Project)
+# 🛒 Olist E-Commerce Analytics (SQL)
 
 An end-to-end SQL project analyzing transactional data from **Olist**, a Brazilian e-commerce marketplace.  
 The project focuses on building a clean analytical base, validating data quality, and answering business questions around revenue, delivery performance, customer geography, and product categories.
